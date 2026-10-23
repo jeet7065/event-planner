@@ -8,19 +8,19 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Navbar stays 100% transparent while user is scrolling through hero frames.
-      // It only regains its background once all frames have finished (hero-track scrolled past).
-      const heroTrack = document.getElementById('hero-track');
-      if (heroTrack) {
-        const rect = heroTrack.getBoundingClientRect();
-        // rect.bottom drops below header area (~80px) once the entire 300vh track has ended
-        if (rect.bottom <= 80) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      } else {
+      // On mobile, transparent at top, solid on small scroll.
+      // On desktop, stays transparent while scrolling through hero-track frames.
+      const isMobile = window.innerWidth < 640;
+      if (isMobile) {
         setIsScrolled(window.scrollY > 40);
+      } else {
+        const heroTrack = document.getElementById('hero-track');
+        if (heroTrack) {
+          const rect = heroTrack.getBoundingClientRect();
+          setIsScrolled(rect.bottom <= 80);
+        } else {
+          setIsScrolled(window.scrollY > 40);
+        }
       }
 
       const sections = ['home', 'about', 'services', 'gallery', 'contact'];
