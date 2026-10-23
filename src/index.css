@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #6C171E;
+  --color-maroon-dark: #521116;
+  --color-maroon-light: #892029;
+  --color-emerald: #0D3D3A;
+  --color-emerald-dark: #072422;
+  --color-emerald-light: #165551;
+  --color-sand: #F4DABF;
+  --color-sand-dark: #E2C2A0;
+  --color-sand-light: #FBF0E3;
+  --color-ivory: #FFFFF0;
+  --color-purewhite: #FFFFFF;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+:root {
+  --maroon: #6C171E;
+  --emerald: #0D3D3A;
+  --sand: #F4DABF;
+  --ivory: #FFFFF0;
+  --purewhite: #FFFFFF;
+}
+
+/* Mobile viewport and tap improvements */
+html, body {
+  overflow-x: clip;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFF0;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D3D3A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6C171E;
+}
+
+/* Smooth card transitions and utilities */
+.glass-nav {
+  background: rgba(255, 255, 240, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #0D3D3A 0%, #6C171E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Vertical infinite marquee animations */
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-up {
+  animation: marquee-up 32s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marquee-down 36s linear infinite;
+}
+
+.animate-marquee-up-alt {
+  animation: marquee-up 40s linear infinite;
+}
+
+.animate-marquee-down-alt {
+  animation: marquee-down 34s linear infinite;
+}
+
+/* Pause ONLY the specific hovered column/track */
+.marquee-col:hover,
+.pause-on-hover:hover,
+.hover-pause:hover {
+  animation-play-state: paused !important;
+}
+
+/* ── CTA Section: Living Gradient Orb Keyframes ── */
+@keyframes orbDrift1 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  25%  { transform: translate(calc(-50% - 120px), calc(-50% + 80px)) scale(1.12); }
+  50%  { transform: translate(calc(-50% + 90px), calc(-50% + 130px)) scale(0.93); }
+  75%  { transform: translate(calc(-50% + 130px), calc(-50% - 90px)) scale(1.08); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift2 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  30%  { transform: translate(calc(-50% + 150px), calc(-50% + 100px)) scale(1.14); }
+  55%  { transform: translate(calc(-50% - 90px), calc(-50% + 160px)) scale(0.90); }
+  80%  { transform: translate(calc(-50% - 130px), calc(-50% - 70px)) scale(1.09); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift3 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  20%  { transform: translate(calc(-50% - 140px), calc(-50% - 110px)) scale(1.15); }
+  45%  { transform: translate(calc(-50% + 100px), calc(-50% - 140px)) scale(0.88); }
+  70%  { transform: translate(calc(-50% + 110px), calc(-50% + 110px)) scale(1.10); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift4 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  35%  { transform: translate(calc(-50% - 110px), calc(-50% - 130px)) scale(1.12); }
+  60%  { transform: translate(calc(-50% + 130px), calc(-50% - 80px)) scale(0.92); }
+  85%  { transform: translate(calc(-50% + 60px), calc(-50% + 140px)) scale(1.07); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift5 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  20%  { transform: translate(calc(-50% + 160px), calc(-50% - 60px)) scale(1.13); }
+  50%  { transform: translate(calc(-50% - 80px), calc(-50% - 120px)) scale(0.91); }
+  75%  { transform: translate(calc(-50% - 140px), calc(-50% + 90px)) scale(1.06); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift6 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  30%  { transform: translate(calc(-50% - 100px), calc(-50% + 150px)) scale(1.11); }
+  55%  { transform: translate(calc(-50% + 140px), calc(-50% + 60px)) scale(0.89); }
+  80%  { transform: translate(calc(-50% + 70px), calc(-50% - 150px)) scale(1.08); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift7 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  25%  { transform: translate(calc(-50% + 80px), calc(-50% + 170px)) scale(1.10); }
+  50%  { transform: translate(calc(-50% - 160px), calc(-50% + 50px)) scale(0.94); }
+  75%  { transform: translate(calc(-50% - 50px), calc(-50% - 160px)) scale(1.09); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
+@keyframes orbDrift8 {
+  0%   { transform: translate(-50%, -50%) scale(1.00); }
+  40%  { transform: translate(calc(-50% + 170px), calc(-50% - 130px)) scale(1.13); }
+  65%  { transform: translate(calc(-50% - 60px), calc(-50% + 180px)) scale(0.87); }
+  90%  { transform: translate(calc(-50% - 150px), calc(-50% - 50px)) scale(1.11); }
+  100% { transform: translate(-50%, -50%) scale(1.00); }
+}
